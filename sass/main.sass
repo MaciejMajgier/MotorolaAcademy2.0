@@ -1,0 +1,325 @@
+*, *::after, ::before
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+body
+    position: relative
+    font-family: 'Roboto', sans-serif
+    background-color: #c9cbd3
+    background-image: linear-gradient(45deg, #192730 30%, #2c2f3a 50%, #9b9494 20%)
+    background-attachment: fixed
+    overflow-x: hidden
+
+.wrapper
+    max-width: 2560px
+    width: 80%
+    margin: 0 auto
+
+
+$txtcolor: #ededf1
+
+
+// header
+// nav
+.navbar
+    position: sticky
+    top: 0
+    display: flex
+    justify-content: space-around
+    align-items: center
+    background-color: #020407a4
+
+
+    .name_logo
+        font-size: 1.5rem
+        margin: .5rem
+        font-weight: bold
+        color: #e6e9eb
+
+
+    .navbar_links
+        ul
+            margin: 0
+            padding: 0
+            display: flex
+
+            li
+                list-style: none
+                font-size: 15px
+                font-weight: bold
+                a
+                    text-decoration: none
+                    color: #e6e9eb
+                    padding: 1rem
+                    display: block
+
+            li:hover
+                background-color: #949aa33f
+
+    .nav_button
+        position: absolute
+        top: .75rem
+        right: 1rem
+        background-color: transparent
+        border-color: transparent
+        font-size: 25px
+        display: none
+
+//main/home
+.content
+    width: 100vw
+    height: 150vh
+    position: relative
+
+    .my_photo
+        position: absolute
+        top: 20%
+        left: 20%
+        transform: translate(-20%)
+        img
+            height: 35vh
+            border-radius: 5px
+            box-shadow: 0px 0px 25px #6d7379
+            border: 1px solid white
+
+    .txt_me
+        position: absolute
+        width: 30vw
+        height: 40vh
+        top: 35%
+        right: 15%
+        color: $txtcolor
+        p
+            padding-top: 10px
+
+
+    .about_ex
+        position: absolute
+        top: 90vh
+        left: 50%
+        transform: translate(-50%, 0)
+        margin: 0 15px
+        color: $txtcolor
+        text-align: center
+
+        h2
+            text-align: center
+            padding-bottom: 25px
+        p
+            padding-top: 25px
+
+
+//contact
+#contact
+    height: 100vh
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+
+    .container
+        width: 90%
+        max-width: 500px
+        margin: 0 auto
+        padding: 20px
+        box-shadow: 0 0 20px #333333
+        background-color: #7f8283
+        border-radius: 5px
+        margin-bottom: 20px
+        color: #f0f0f0
+
+        .head
+            text-align: center
+            font-weight: bold
+            font-size: 25px
+
+        .form_group
+            width: 100%
+            margin-top: 20px
+            font-style: 20px
+            font-weight: bold
+
+
+            input, textarea
+                width: 100%
+                padding: 5px
+                font-style: 18px
+                border: 1px solid rgba(128,128 ,128 ,0.1 )
+                margin-top: 5px
+
+            textarea
+                resize: vertical
+        .sub_button
+            width: 100%
+            border: none
+            border-radius: 5px
+            outline: none
+            padding: 15px
+            background-color: #8364a0
+            text-transform: uppercase
+            font-weight: bold
+            font-style: 22px
+            color: #f0f0f0
+            cursor: pointer
+            transition: background-color .4s
+
+        .sub_button:hover
+            background-color: #8e37da
+
+
+// travels
+#funfact
+    position: relative
+    height: 100vh
+    width: 100%
+
+    .text_fun
+        position: relative
+        top: 10vh
+        color: $txtcolor
+        text-align: center
+
+        h2
+            margin-bottom: 15px
+
+        p
+            margin-top: 15px
+            font-weight: bold
+
+    .yt_movie
+        width: 560px
+        height: 315px
+        position: absolute
+        border: 2px solid black
+        top: 60%
+        left: 50%
+        transform: translate(-50%, -60%)
+
+//projcet
+#project
+    position: relative
+
+    .txt_proj, h1
+        text-align: center
+        margin-top: 15px
+        color: $txtcolor
+
+        i
+            font-size: 25px
+    h1
+        font-size: 30px
+
+    .photos
+        height: 100vh
+        width: 80vw
+        img
+            position: absolute
+            width: 40vw
+            border: 2px solid black
+        .img1
+            top: 15vh
+            left: 55vw
+            z-index: 2
+        .img2
+            top: 15vh
+            left: 5vw
+            z-index: 1
+        .img3
+            top: 50vh
+            left: 30vw
+
+
+footer
+    position: absolute
+    bottom: 0
+    color: gray
+    width: 100%
+    background-color: #38393a
+
+
+    p
+        font-size: 12px
+        margin-bottom: 0
+        padding: 5px
+        text-align: center
+
+
+@media (min-width: 270px) and (max-width: 768px)
+
+    // nav
+    .navbar
+        flex-direction: column
+        align-items: flex-start
+
+        .navbar_links
+            opacity: 0
+            overflow: hidden
+            height: 0
+            width: 100%
+            transition: opacity .7s ease-out
+
+            ul
+                width: 100%
+                flex-direction: column
+            li
+                text-align: center
+
+                a
+                    padding: .5rem 1rem
+        .nav_button
+                    display: flex
+                    cursor: pointer
+                    transition: .5s
+        .active
+            opacity: 1
+            height: auto
+        .rotate
+            transform: rotate(180deg)
+
+
+        // content
+    .content
+        width: 100vw
+        height: 200vh
+        position: relative
+
+        .my_photo
+            position: absolute
+            top: 10%
+            left: 50%
+            transform: translate(-50%)
+            img
+                height: 30vh
+
+        .txt_me
+            width: 80vw
+            top: 35%
+            left: 50%
+            transform: translate(-50%, -35%)
+
+        .about_ex
+            margin: 30px 0
+
+
+
+        // funfact
+    #funfact
+        .yt_movie
+            top: 70%
+            width: 75vw
+            height: 30vh
+
+    #project
+        .photos
+            a
+                img
+                    width: 40vw
+                .img1, .img2
+                    top: 22vh
+
+
+
+
+
